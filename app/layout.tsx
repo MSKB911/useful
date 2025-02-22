@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Space_Grotesk } from "next/font/google"
 import "@/styles/globals.css"
 import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { CartProvider } from "@/components/cart-provider"
 import { Toaster } from "@/components/ui/toaster"
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           <main className="pb-16">{children}</main>
+          <Footer />
           <Toaster />
         </CartProvider>
       </body>

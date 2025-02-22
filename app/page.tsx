@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { createElement } from "react"
 import { Shield, Leaf, Smile, Zap, Settings, Sparkles } from "lucide-react"
+import { FeaturedProducts } from "@/components/featured-products"
 
 export default function Home() {
   return (
@@ -100,6 +101,14 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <FeaturedProducts />
+      </motion.div>
     </>
   )
 }
