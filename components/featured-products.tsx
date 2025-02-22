@@ -38,20 +38,20 @@ export function FeaturedProducts() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {featuredProducts.map((product) => (
-          <Card key={product.id} className="flex flex-col overflow-hidden">
-            <div className="relative h-48 w-full">
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-              <Badge className="absolute top-2 right-2 bg-primary text-primary-foreground">
-                {product.badge}
-              </Badge>
-            </div>
-            <CardHeader className="pt-6">
+          <Card key={product.id} className="flex flex-col">
+            <CardHeader>
+              <div className="relative h-48 w-full mb-4">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                <Badge className="absolute top-2 right-2 bg-primary text-primary-foreground">
+                  {product.badge}
+                </Badge>
+              </div>
               <CardTitle>{product.name}</CardTitle>
             </CardHeader>
             <CardContent>
@@ -60,7 +60,7 @@ export function FeaturedProducts() {
             <CardFooter className="mt-auto">
               <div className="flex items-center justify-between w-full">
                 <span className="text-lg font-bold">${product.price}</span>
-                <Button className="px-6">Add to Cart</Button>
+                <Button>Add to Cart</Button>
               </div>
             </CardFooter>
           </Card>
